@@ -2,21 +2,26 @@
 #include <mpfr.h>
 #include <iostream>
 
+#include <SFML/Graphics.hpp>
+
 #include <Globals.hpp>
 
-int main(int, char**){
+int main(int, char **) {
     mpfr_t re, im, re2, im2, cre, cim, T;
 
-    mpfr_set_default_prec(32);
-    mpfr_inits(re, im, re2, im2, cre, cim, T, (mpfr_ptr) 0);
+    mpfr_set_default_prec(128);
+    mpfr_inits(re, im, re2, im2, cre, cim, T, (mpfr_ptr)0);
 
-    std::cout << "P3" << std::endl;
-    std::cout << Globals::SCREEN_WIDTH << " " << Globals::SCREEN_HEIGHT << std::endl;
-    std::cout << "255" << std::endl;
+    std::cout << "P3" << Globals::SCREEN_WIDTH << " " << Globals::SCREEN_HEIGHT
+              << std::endl
+              << "255" << std::endl;
+
     for (int j = 0; j < Globals::SCREEN_HEIGHT; j++) {
         for (int i = 0; i < Globals::SCREEN_WIDTH; i++) {
-            mpfr_set_flt(cre, (float) i / Globals::SCREEN_WIDTH * 4.0 - 2.0, MPFR_RNDN);
-            mpfr_set_flt(cim, (float) j / Globals::SCREEN_HEIGHT * 4.0 - 2.0, MPFR_RNDN);
+            mpfr_set_flt(cre, (float)i / Globals::SCREEN_WIDTH * 4.0 - 2.0,
+                         MPFR_RNDN);
+            mpfr_set_flt(cim, (float)j / Globals::SCREEN_HEIGHT * 4.0 - 2.0,
+                         MPFR_RNDN);
 
             mpfr_set_flt(re, 0.0, MPFR_RNDN);
             mpfr_set_flt(im, 0.0, MPFR_RNDN);
@@ -41,11 +46,11 @@ int main(int, char**){
                     break;
                 }
                 iter++;
-            } 
+            }
 
             std::cout << iter << " " << iter << " " << iter << std::endl;
         }
     }
 
-    mpfr_clears(re, im, re2, im2, cre, cim, T, (mpfr_ptr) 0);
+    mpfr_clears(re, im, re2, im2, cre, cim, T, (mpfr_ptr)0);
 }

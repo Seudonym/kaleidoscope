@@ -10,3 +10,8 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(MPFR REQUIRED)
 message(STATUS "Found MPFR: ${MPFR_FOUND}")
 target_link_libraries(kaleidoscope "${MPFR_LIBRARIES}")
+
+# set(SFML_STATIC_LIBRARIES TRUE)
+find_package(SFML COMPONENTS graphics window system REQUIRED)
+message(STATUS "Found SFML: ${SFML_FOUND}")
+target_link_libraries(kaleidoscope "${SFML_LIBRARIES}")
