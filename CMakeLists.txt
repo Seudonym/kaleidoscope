@@ -3,7 +3,7 @@ project(kaleidoscope VERSION 0.1.0 LANGUAGES C CXX)
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 
-add_executable(kaleidoscope main.cpp include/Globals.cpp)
+add_executable(kaleidoscope main.cpp include/Globals.cpp include/Mandelbrot.cpp)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 

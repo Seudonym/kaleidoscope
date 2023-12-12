@@ -1,13 +1,7 @@
 #pragma once
+#include "Fractal.hpp"
 
-#include <mpfr.h>
-#include <stdio.h>
-
-#include "Globals.hpp"
-
-class Mandelbrot {
+class Mandelbrot : public Fractal {
 public:
-    Mandelbrot();
-
-    virtual void render() const = 0;
+    void render() const override;
 };
