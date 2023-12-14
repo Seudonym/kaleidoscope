@@ -5,6 +5,7 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 add_executable(kaleidoscope main.cpp include/Globals.cpp include/Mandelbrot.cpp)
 
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 find_package(MPFR REQUIRED)

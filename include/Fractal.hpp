@@ -3,6 +3,8 @@
 #include <mpfr.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <vector>
+#include <thread>
 
 #include "Globals.hpp"
 
